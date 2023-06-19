@@ -9,7 +9,7 @@ export default function Header(){
             <div className="header-login">
                 <p>Sign Up</p>
                 <p>Log In</p>
-                <a href="../index.html">
+                <a href="./index.html">
                     <img src={home} alt="" />
                 </a>
             </div>
