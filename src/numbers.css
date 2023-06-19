@@ -1,0 +1,191 @@
+.number-main-container{
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    background-color: #5e3421;
+}
+
+.number-hero{
+    background-color: #5e3421;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-hero-title{
+    margin: 40px auto;
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.number-hero-text{
+    font-size: 1.7rem;
+    margin: 10px 0px;
+}
+
+.number-hero-button{
+    color: rgb(17, 3, 3);
+    background-color: #4ad327;
+    padding: 10px 20px;
+    margin: 80px 0px;;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.number-hero-button:disabled, .number-hero-button:disabled:hover {
+    background-color: #738f6c;
+}
+
+.number-hero-button:hover{
+    background-color: #65e62a;
+    transform: scale(1.1);
+}
+
+.number-hero-display, .number-main-display{
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: rgb(155, 155, 248);
+    letter-spacing: 0.5rem;
+}
+
+.number-hero-next-level{
+    color: rgb(17, 3, 3);
+    background-color: #4ad327;
+    padding: 10px 20px;
+    margin: 30px 0px;;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.number-hero-next-level:hover{
+    background-color: #65e62a;
+    transform: scale(1.1);
+}
+
+.number-hero-submit{
+    color: rgb(17, 3, 3);
+    background-color: #e2aa40;
+    padding: 10px 20px;
+    margin: 30px 0px;;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.number-hero-submit:active{
+    background-color: #c9851f;
+}
+
+.number-main{
+    background-color: #5e3421;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-main-title{
+    font-size: 1.7rem;
+    margin: 10px 0px;
+    margin: 50px auto;
+}
+
+.number-level{
+    font-size: 2rem;
+    margin-top: 40px;
+}
+
+.number-lives{
+    margin: 30px auto;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.number-lives img{
+    height: 40px;
+}
+
+.number-input-text{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.number-main input{
+    font-size: 2.0rem;
+    text-align: center;
+    padding: 10px 10px;
+    background-color: #c78b6f;
+
+}
+
+.half-opacity{
+    opacity: 0.6;
+}
+
+.game-over{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 450px;
+    width: 400px;
+    border: 1px solid rgb(214, 204, 204);
+    background: rgb(93, 130, 161);
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 0 20px 5px #494545;
+    animation: fadeIn 1.0s ease-in;
+}
+
+.game-over-title{
+    margin-top: 20px;
+    font-size: 2rem
+}
+
+.game-over-image{
+    margin: 20px 0px;
+}
+
+.game-over-text{
+    font-size: 1.5rem;
+}
+
+.game-over-flavour-text{
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.game-over button{
+    position: relative;
+    top: -82%;
+    left: 40%;
+    padding: 5px 10px;
+    font-size: 1.0rem;
+    border-radius: 5px;;
+}
+
+.number-game-over{
+    text-align: center;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1.0;
+    }
+}
