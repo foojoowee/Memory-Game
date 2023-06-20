@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react"
+import {useEffect, useState, useRef} from "react"
 import heart from '../../assets/heart.png';
 import {arrayNumber} from './NumberHero'
 import audio3 from '../../assets/sound3.mp3';
@@ -12,6 +12,30 @@ export default function NumberMain(props){
     const [correctAns, setCorrectAns] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [flickerState, setFlickerState] = useState("false");
+
+    function handleKeyPress(e) {
+        if(document.getElementById('level-up')){
+            if (e.key === 'Enter') {
+                console.log("Event run")
+                document.getElementById('level-up').click();
+              }
+        }
+        if(document.getElementById('restart')){
+            if (e.key === 'Enter') {
+                console.log("Event run")
+                document.getElementById('restart').click();
+              }
+        }
+      }
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeyPress);
+    
+        // Cleanup the event listener on component unmount
+        return () => {
+          document.removeEventListener('keydown', handleKeyPress);
+        };
+      }, []);
 
     function levelUp(){
         setAnswerMode(false);
@@ -96,6 +120,15 @@ export default function NumberMain(props){
         }
     },[currentLevel])
 
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter"){
+            setTimeout(() => {
+                event.preventDefault();
+                checkAnswer();
+            }, 100);
+        }
+    }
+
     return(
         <>
         <div className={`number-main ${lives == 0 ? "half-opacity" : ""} `}>
@@ -113,7 +146,7 @@ export default function NumberMain(props){
                 <div className="number-input-text">
                     Enter Number:
                 </div>
-                <input type="text" value={inputValue} onChange={handleInputChange} />
+                <input type="text" autoFocus value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown}/>
                 <button className="number-hero-submit" onClick={()=>checkAnswer()} >
                     SUBMIT
                 </button>
@@ -125,7 +158,7 @@ export default function NumberMain(props){
                 <div className="number-input-text">
                     Wrong, please try again.
                 </div>
-                <button className="number-hero-next-level" onClick={()=>retry()}>
+                <button id="restart" className="number-hero-next-level" onClick={()=>retry()}>
                     RETRY
                 </button>
             </>
@@ -136,7 +169,7 @@ export default function NumberMain(props){
                 <div className="number-input-text">
                     Game Over. Please press Restart
                 </div>
-                <button className="number-hero-button" onClick={props.toggle}>RESTART</button>
+                <button id="restart" className="number-hero-button" onClick={props.toggle} >RESTART</button>
             </div>
             }
 
@@ -145,7 +178,7 @@ export default function NumberMain(props){
                 <div className="number-input-text">
                     Correct, please proceed
                 </div>
-                <button className="number-hero-next-level" onClick={()=>levelUp()}>
+                <button id="level-up" className="number-hero-next-level" onClick={()=>levelUp()}>
                     NEXT LEVEL
                 </button>
             </>

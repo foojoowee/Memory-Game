@@ -68,14 +68,14 @@ export default function SequenceMain(props){
             const boxElement = document.getElementById(`box${boxId}`);
             boxElement.classList.add('main-grid-box-selected');
             if (boxId <= 3){
-                newAudio1.currentTime = 0;
-                newAudio1.play();
+                newAudio3.currentTime = 0;
+                newAudio3.play();
             } else if (boxId >6) {
                 newAudio3.currentTime = 0;
                 newAudio3.play();
             } else{
-                newAudio2.currentTime = 0;
-                newAudio2.play();
+                newAudio3.currentTime = 0;
+                newAudio3.play();
             }
             setTimeout(() => {
               boxElement.classList.remove('main-grid-box-selected');
@@ -99,14 +99,14 @@ export default function SequenceMain(props){
         }, 300);
         const curId = parseInt(event.target.id.slice(3));
         if (curId <= 3){
-            newAudio1.currentTime = 0;
-            newAudio1.play();
+            newAudio3.currentTime = 0;
+            newAudio3.play();
         } else if (curId >6) {
             newAudio3.currentTime = 0;
             newAudio3.play();
         } else{
-            newAudio2.currentTime = 0;
-            newAudio2.play();
+            newAudio3.currentTime = 0;
+            newAudio3.play();
         }
         if (gameState){
             setAnswer((prevAnswer)=> 

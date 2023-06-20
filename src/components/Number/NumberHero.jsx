@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react"
 const arrayNumber = [];
 for (let i = 0; i < 21; i++){
-    arrayNumber.push(Math.floor(Math.random()*9*10**i) + 1**10*i);
+    arrayNumber.push(Math.floor(Math.random()*9*10**i) + 1*10**i);
 }
 
 export default function NumberHero(props){

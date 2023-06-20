@@ -50,6 +50,7 @@
     margin-bottom: 50px;
     color: rgb(155, 155, 248);
     letter-spacing: 0.5rem;
+    user-select: none;
 }
 
 .number-hero-next-level{

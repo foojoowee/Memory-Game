@@ -3,7 +3,7 @@ import Footer from "./components/Shared/Footer"
 import NumberMain from "./components/Number/NumberMain"
 import NumberHero from "./components/Number/NumberHero"
 import { useState } from "react"
-import audioStart from './assets/start.mp3';
+import audioStart from './assets/sound2.mp3';
 
 export default function Number(){
     const [gameStarted, setGameStarted] = useState(false)
