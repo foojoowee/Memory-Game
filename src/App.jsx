@@ -7,11 +7,6 @@ import Games from "./components/Main/Games"
 import './index.css'
 import {useEffect, useState} from 'react'
 
-import {gapi} from 'gapi-script'
-import GoogleLoginComp from "./components/Shared/LoginGoogle"
-import GoogleLogoutComp from "./components/Shared/LogoutGoogle"
-const clientId = "950526876502-araq01tdsu8cef71ek5kse7j3hmnk2h3.apps.googleusercontent.com"
-
 export default function App() {
   const [loginPopup, setLoginPopup] = useState(false)
   const [signupPopup, setSignupPopUp] = useState(false);

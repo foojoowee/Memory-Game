@@ -21,3 +21,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+/Shared/LoginGoogle.jsx
+/Shared/LogoutGoogle.jsx
