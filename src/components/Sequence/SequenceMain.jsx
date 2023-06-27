@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import audio1 from '../../assets/sound.mp3';
 import audio2 from '../../assets/sound2.mp3';
 import audio3 from '../../assets/sound3.mp3';
@@ -15,14 +15,20 @@ export default function SequenceMain(props){
     const [gameState, setGameState] = useState(false);
     const [answer, setAnswer] = useState([]);
     const [solution, setSolution] = useState([]);
+    const sequenceRef = useRef();
+    function backgroundChange(){
+        sequenceRef.current.style.backgroundColor = "#4885c2"
+    }
+    function backgroundRevert(){
+        sequenceRef.current.style.backgroundColor = "#216bb4"
+    }
     
     function levelUp(){
         setTimeout(() => {
-            const background = document.getElementsByClassName("sequence-main")[0];
-            background.style.backgroundColor = "#4885c2";
+            backgroundChange()
             setTimeout(() =>{
                 setCurrentLevel((prevLevel)=> prevLevel + 1);
-                background.style.backgroundColor = "#216bb4";
+                backgroundRevert()
             },100);
         }, 400);
         console.log("You have passed the level");
@@ -174,7 +180,7 @@ export default function SequenceMain(props){
 
     return(
         <div>
-            <div className={`sequence-main ${lives == 0 ? "half-opacity" : ""} `}>
+            <div className={`sequence-main ${lives == 0 ? "half-opacity" : ""} `} ref={sequenceRef}>
                 <div className="sequence-main-text">
                     Click the boxes in order.
                 </div>

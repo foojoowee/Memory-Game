@@ -35,6 +35,7 @@ body{
 .header-login p:hover, .header-scores:hover{
   background: rgb(214, 212, 212);
   transition: background 0.4s;
+  cursor: pointer
 }
 
 .header-login img{
@@ -219,4 +220,185 @@ body{
   to{
       opacity: 1.0;
   }
+}
+
+@keyframes scaleIn{
+  from{
+      scale: 0;
+  }
+  to{
+      scale: 1;
+  }
+}
+
+@keyframes scaleOut{
+  from{
+      scale: 1;
+  }
+  to{
+      scale: 0;
+  }
+}
+
+.login-wrapper{
+    position: absolute;
+    top: 20%;
+    left: 39.5%;
+    width: 350px;
+    height: 400px;
+    background: rgb(181, 181, 221);
+    border: 2px solid white;
+    border-radius: 10%;
+    backdrop-filter: blur(100px);
+    box-shadow: 0px 0px 100px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    overflow: hidden;
+    transform: scale(0)
+}
+
+
+
+.appear{
+  transform: scale(1)
+}
+
+.login-header h2, .signup-header h2{
+  margin-bottom: 40px;
+  text-decoration: underline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-box{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-box label{
+  /* this position absolute is relative based on the parent container, .input-box */
+  position: absolute;
+  top: 60%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  font-weight: 400;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input:not(:placeholder-shown)~label,
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: 0px;
+    font-size: 1.0rem;
+}
+
+.input-box input{
+    position: relative;
+    width: 100%;
+    top: 30%;
+    font-size: 0.9rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-right: 45px;
+}
+.remember-me{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.remember-me label{
+  font-size: 0.9rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.btn-submit{
+  background-color: rgb(245, 238, 238);
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  font-size: 1rem;
+}
+
+.btn-submit:hover{
+  background-color: rgb(63, 61, 61);
+  color: white;
+}
+
+.login-register {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.0rem;
+  margin-top: 20px;
+}
+
+.login-close-icon{
+  position: absolute;
+  height: 20px;
+  top: 3%;
+  left: 85%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-header{
+  position: relative;
+  display: flex;
+}
+
+.login-close-icon:hover{
+  scale: 1.25;
+}
+
+.signup-main{
+  position: absolute;
+  transform: translateX(400px);
+  transition: 0.7s;
+}
+
+.signup-header{
+  position: relative;
+  display: flex;
+}
+
+.signup-active{
+  transition: 0.7s;
+  transform: translateX(0px);
+}
+
+.login-signup-active{
+  transition: 0.7s;
+  transform: translateX(-400px);
+}
+
+.login-main{
+  transition: 0.7s;
+}
+
+.signup-close-icon{
+  position: absolute;
+  height: 20px;
+  top: -30%;
+  left: 80%;
+  cursor: pointer;
+  transition: 0.2s;
 }

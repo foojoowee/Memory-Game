@@ -7,10 +7,6 @@ import { useState } from 'react'
 export default function Games(){
     const [popup, setPopup] = useState(false)
 
-    function startAudio(){
-
-    }
-
     function togglePopup(){
         setPopup((prevState)=> !prevState)
     }
