@@ -16,6 +16,7 @@ export default function SequenceMain(props){
     const [answer, setAnswer] = useState([]);
     const [solution, setSolution] = useState([]);
     const sequenceRef = useRef();
+
     function backgroundChange(){
         sequenceRef.current.style.backgroundColor = "#4885c2"
     }
@@ -177,6 +178,29 @@ export default function SequenceMain(props){
         setLives(-1)
         setDisplayText("You lost all lives. Please restart game.")
     }
+
+    useEffect(() => {
+        if (lives === 0){
+            const currentDate = new Date();
+            const day = currentDate.getDate();
+            const month = currentDate.getMonth() + 1;
+            const year = currentDate.getFullYear();
+    
+            const formattedDay = String(day).padStart(2, "0");
+            const formattedMonth = String(month).padStart(2, "0");
+            const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
+    
+            const newSequenceScore = {playerName: props.playerName, level: currentLevel, date: formattedDate}
+
+            const existingSequenceScores = localStorage.getItem('sequenceScores');
+            const sequenceScores = existingSequenceScores ? JSON.parse(existingSequenceScores) : [];
+            console.log(sequenceScores)
+            sequenceScores.push(newSequenceScore);
+            sequenceScores.sort((a,b) => b.level - a.level)
+            localStorage.setItem('sequenceScores', JSON.stringify(sequenceScores));
+            console.log("It worked")
+        }
+    }, [lives])
 
     return(
         <div>

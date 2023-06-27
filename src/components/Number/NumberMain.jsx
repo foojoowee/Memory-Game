@@ -27,6 +27,27 @@ export default function NumberMain(props){
               }
         }
       }
+    
+    useEffect(() => {
+        if (lives === 0){
+            const currentDate = new Date();
+            const day = currentDate.getDate();
+            const month = currentDate.getMonth() + 1;
+            const year = currentDate.getFullYear();
+    
+            const formattedDay = String(day).padStart(2, "0");
+            const formattedMonth = String(month).padStart(2, "0");
+            const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
+    
+            const newNumberScore = {playerName: props.playerName, level: currentLevel, date: formattedDate}
+
+            const existingNumberScores = localStorage.getItem('numberScores');
+            const numberScores = existingNumberScores ? JSON.parse(existingNumberScores) : [];
+            numberScores.push(newNumberScore);
+            numberScores.sort((a,b) => b.level - a.level)
+            localStorage.setItem('numberScores', JSON.stringify(numberScores));
+        }
+    }, [lives])
 
     useEffect(() => {
         document.addEventListener('keydown', handleKeyPress);

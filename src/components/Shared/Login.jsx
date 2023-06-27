@@ -1,4 +1,5 @@
 import closeIcon from '../../assets/close-icon.svg'
+import googleIcon from '../../assets/google-icon.svg'
 
 export default function Login({closeToggle, loginPopup, signupPopup, toggleSignup, toggleLogin}){
     
@@ -54,19 +55,22 @@ export default function Login({closeToggle, loginPopup, signupPopup, toggleSignu
                         <input type="checkbox"/>
                         <label>I agree to the T&C</label>
                     </div>
-                    <button type="submit" className="btn-submit">
-                        Sign Up
-                    </button>
+                    <div className="signup-buttons">
+                        <button type="submit" className="btn-submit">
+                            Sign Up
+                        </button>
+                        <button type="submit" className="btn-submit">
+                            <img src={googleIcon} alt="" />
+                            Google
+                        </button>
+                    </div>
                     <div className="login-register">
                         <a href="#" className="register-link" onClick={toggleLogin}> Log In </a>
                         <br/>
                         <a href="#" className="password-link"> Forgot Password?</a>
                     </div>
                 </form>
-
             </div>
-
-            
         </div>
     )
 }

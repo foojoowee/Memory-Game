@@ -260,7 +260,102 @@ body{
     transform: scale(0)
 }
 
+.highscore-main{
+  position: absolute;
+  top: 20%;
+  left: 37.5%;
+  width: 600px;
+  height: 500px;
+  background: rgb(206, 206, 221);
+  border: 2px solid white;
+  border-radius: 10%;
+  backdrop-filter: blur(100px);
+  box-shadow: 0px 0px 100px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(1)
+}
 
+.highscore-title{
+  margin: 20px auto;
+  padding: 10px 0px;
+  font-size: 2rem;
+}
+
+.highscore-tabs{
+  display: flex;
+  cursor: pointer;
+}
+
+.highscore-tab-1{
+  background: grey;
+  padding: 3px 30px;
+  color: white;
+}
+
+.highscore-tab-2{
+  background: grey;
+  padding: 3px 30px;
+  color: white;
+
+}
+
+.highscore-table{
+  margin-top: 20px;
+}
+
+.highscore-table table{
+  border-spacing: 20px
+}
+
+.highscore-table img{
+  height: 20px;
+  margin-left: 4px
+}
+
+.highscore-table tr:nth-child(1) td{
+ border: 1px solid black;
+ border-radius: 10px;
+ margin: 0px 10px;
+ padding: 2px 10px;
+ width: 100px;
+ text-align: center;
+ background: rgb(250, 224, 224)
+}
+
+.highscore-table tr td:nth-child(1){
+  width: 20px;
+ }
+
+ .highscore-table tr td:nth-child(2){
+  width: 180px;
+ }
+
+.highscore-table td{
+  text-align: center;
+}
+
+.highscore-close{
+  position: absolute;
+  top: 5%;
+  left: 88%;
+}
+
+.highscore-close:hover{
+  scale: 1.25;
+}
+
+.highscore-buttons button{
+  margin: 10px 20px;
+  font-size: 1.0rem;
+  padding: 0px 10px;
+
+}
+
+.selected-tab{
+  background: rgb(51, 49, 49);
+}
 
 .appear{
   transform: scale(1)
@@ -401,4 +496,13 @@ body{
   left: 80%;
   cursor: pointer;
   transition: 0.2s;
+}
+
+.signup-buttons{
+  display: flex;
+}
+
+.btn-submit img{
+  height: 20px;
+  margin-right: 3px;
 }

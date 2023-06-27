@@ -1,14 +1,36 @@
 import Header from "./components/Shared/Header"
 import Footer from "./components/Shared/Footer"
 import Login from "./components/Shared/Login"
+import HighScore from "./components/Shared/HighScore"
 import Hero from "./components/Main/Hero"
 import Games from "./components/Main/Games"
 import './index.css'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+
+import {gapi} from 'gapi-script'
+import GoogleLoginComp from "./components/Shared/LoginGoogle"
+import GoogleLogoutComp from "./components/Shared/LogoutGoogle"
+const clientId = "950526876502-araq01tdsu8cef71ek5kse7j3hmnk2h3.apps.googleusercontent.com"
 
 export default function App() {
   const [loginPopup, setLoginPopup] = useState(false)
   const [signupPopup, setSignupPopUp] = useState(false);
+  const [scorePopup, setScorePopup] = useState(false);
+
+  // useEffect(()=> {
+  //   function start(){
+  //     gapi.client.init({
+  //       clientId: clientId,
+  //       scope: ""
+  //     })
+  //   }
+
+  //   gapi.load('client:auth2',start);
+  // })
+
+  function toggleHighScore(){
+    setScorePopup((prevState) => !prevState)
+  }
 
   function toggleLogin(){
     setLoginPopup(true)
@@ -27,9 +49,12 @@ export default function App() {
 
   return (
     <div>
+      {/* <GoogleLoginComp/>
+      <GoogleLogoutComp/> */}
       <Header
         toggleLogin={toggleLogin}
         toggleSignup={toggleSignup}
+        toggleHighScore={toggleHighScore}
       />
       <Login
           closeToggle={closeToggle}
@@ -38,6 +63,10 @@ export default function App() {
           toggleLogin = {toggleLogin}
           toggleSignup = {toggleSignup}
       />
+      {scorePopup && 
+      <HighScore
+        toggleHighScore={toggleHighScore}
+      />}
       <div className="main-container">
         <Hero/>
         <Games/>
