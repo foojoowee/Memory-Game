@@ -192,12 +192,12 @@ export default function SequenceMain(props){
     
             const newSequenceScore = {playerName: props.playerName, level: currentLevel, date: formattedDate}
 
-            const existingSequenceScores = localStorage.getItem('sequenceScores');
+            const existingSequenceScores = sessionStorage.getItem('sequenceScores');
             const sequenceScores = existingSequenceScores ? JSON.parse(existingSequenceScores) : [];
             console.log(sequenceScores)
             sequenceScores.push(newSequenceScore);
             sequenceScores.sort((a,b) => b.level - a.level)
-            localStorage.setItem('sequenceScores', JSON.stringify(sequenceScores));
+            sessionStorage.setItem('sequenceScores', JSON.stringify(sequenceScores));
             console.log("It worked")
         }
     }, [lives])

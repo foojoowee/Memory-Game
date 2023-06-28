@@ -41,11 +41,11 @@ export default function NumberMain(props){
     
             const newNumberScore = {playerName: props.playerName, level: currentLevel, date: formattedDate}
 
-            const existingNumberScores = localStorage.getItem('numberScores');
+            const existingNumberScores = sessionStorage.getItem('numberScores');
             const numberScores = existingNumberScores ? JSON.parse(existingNumberScores) : [];
             numberScores.push(newNumberScore);
             numberScores.sort((a,b) => b.level - a.level)
-            localStorage.setItem('numberScores', JSON.stringify(numberScores));
+            sessionStorage.setItem('numberScores', JSON.stringify(numberScores));
         }
     }, [lives])
 

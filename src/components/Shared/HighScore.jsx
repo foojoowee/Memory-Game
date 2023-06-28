@@ -4,7 +4,7 @@ import silverTrophy from '../../assets/silver-icon.svg'
 import bronzeTrophy from '../../assets/bronze-icon.svg'
 import {useState} from 'react'
 
-export default function HighScore({toggleHighScore}){
+export default function HighScore({toggleHighScore, initializeScore}){
     
     const [selectedTab, setSelectedTab] = useState(true)
 
@@ -15,45 +15,21 @@ export default function HighScore({toggleHighScore}){
     }
 
     function clearStorage(){
-        localStorage.clear();
-
-        const defaultSequenceScores = [
-            {playerName: "SKT T1 Faker", level: 15, date: "27/06/2023"},
-            {playerName: "100T Doublelift", level: 14, date: "27/06/2023"},
-            {playerName: "Daniel Negs", level: 12, date: "27/06/2023"},
-            {playerName: "Wolfey VGC", level: 12, date: "27/06/2023"},
-            {playerName: "Lelouch Vi Britannia", level: 1, date: "27/06/2023"},
-        ]
-
-        const stringDefaultSequenceScores = JSON.stringify(defaultSequenceScores)
-
-        localStorage.setItem('sequenceScores', stringDefaultSequenceScores )
-
-        const defaultNumberScores = [
-            {playerName: "Hikaru Nakamura", level: 16, date: "27/06/2023"},
-            {playerName: "Magnus Carlsen", level: 16, date: "27/06/2023"},
-            {playerName: "Drxx", level: 14, date: "27/06/2023"},
-            {playerName: "JW", level: 12, date: "27/06/2023"},
-            {playerName: "Jue Viole Grace", level: 1, date: "27/06/2023"},
-        ]
-        
-        const stringDefaultNumberScores = JSON.stringify(defaultNumberScores)
-        
-        localStorage.setItem('numberScores', stringDefaultNumberScores )
-        console.log("Storage Cleared")
+        sessionStorage.clear();
+        initializeScore();
     }
     
     function printStorage(){
-        const sequenceScores = JSON.parse(localStorage.getItem('sequenceScores'))
-        const numberScores = JSON.parse(localStorage.getItem('numberScores'))
+        const sequenceScores = JSON.parse(sessionStorage.getItem('sequenceScores'))
+        const numberScores = JSON.parse(sessionStorage.getItem('numberScores'))
         console.log(sequenceScores)
         console.log(sequenceScores[0].playerName)
         console.log(numberScores)
         console.log("Storage Printed")
     }
 
-    const sequenceScores = JSON.parse(localStorage.getItem('sequenceScores'))
-    const numberScores = JSON.parse(localStorage.getItem('numberScores'))
+    const sequenceScores = JSON.parse(sessionStorage.getItem('sequenceScores'))
+    const numberScores = JSON.parse(sessionStorage.getItem('numberScores'))
 
     return(
         <div className="highscore-main">

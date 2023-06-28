@@ -1,6 +1,7 @@
 import home from '../../assets/home-icon.svg'
 
 export default function Header({toggleLogin, toggleSignup, toggleHighScore}){
+
     return(
         <div className="header-main">
             <div className="header-scores" onClick={toggleHighScore}>

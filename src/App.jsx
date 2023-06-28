@@ -23,6 +23,37 @@ export default function App() {
   //   gapi.load('client:auth2',start);
   // })
 
+  function initializeScore(){
+    const defaultSequenceScores = [
+        {playerName: "SKT T1 Faker", level: 15, date: "27/06/2023"},
+        {playerName: "100T Doublelift", level: 14, date: "27/06/2023"},
+        {playerName: "Daniel Negs", level: 12, date: "27/06/2023"},
+        {playerName: "Wolfey VGC", level: 12, date: "27/06/2023"},
+        {playerName: "Lelouch Vi Britannia", level: 1, date: "27/06/2023"},
+    ]
+
+    const stringDefaultSequenceScores = JSON.stringify(defaultSequenceScores)
+
+    sessionStorage.setItem('sequenceScores', stringDefaultSequenceScores )
+
+    const defaultNumberScores = [
+        {playerName: "Hikaru Nakamura", level: 16, date: "27/06/2023"},
+        {playerName: "Magnus Carlsen", level: 16, date: "27/06/2023"},
+        {playerName: "Drxx", level: 14, date: "27/06/2023"},
+        {playerName: "JW", level: 12, date: "27/06/2023"},
+        {playerName: "Jue Viole Grace", level: 1, date: "27/06/2023"},
+    ]
+    
+    const stringDefaultNumberScores = JSON.stringify(defaultNumberScores)
+    
+    sessionStorage.setItem('numberScores', stringDefaultNumberScores )
+    console.log("Store initialized")
+  }
+
+  useEffect(() => {
+    initializeScore();
+  }, [])
+
   function toggleHighScore(){
     setScorePopup((prevState) => !prevState)
   }
@@ -61,6 +92,7 @@ export default function App() {
       {scorePopup && 
       <HighScore
         toggleHighScore={toggleHighScore}
+        initializeScore = {initializeScore}
       />}
       <div className="main-container">
         <Hero/>
