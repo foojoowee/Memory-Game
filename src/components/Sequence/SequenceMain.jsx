@@ -5,10 +5,10 @@ import audio3 from '../../assets/sound3.mp3';
 import heart from '../../assets/heart.png';
 import {images} from '../Main/Hero'
 
-const randomNumbers = [];
-for(let i = 0; i <30; i++){
-    randomNumbers.push(Math.floor(Math.random()*9)+1);
-}
+// const randomNumbers = [];
+// for(let i = 0; i <30; i++){
+//     randomNumbers.push(Math.floor(Math.random()*9)+1);
+// }
 
 export default function SequenceMain(props){
     const [currentLevel, setCurrentLevel] = useState(1);
@@ -54,7 +54,7 @@ export default function SequenceMain(props){
             setEndImage(images[5])
             setFlavourText("Good job, you should consider trying a harder game to test your limits")
         }
-        let temp = randomNumbers.slice();
+        let temp = props.arraySequence.slice();
         temp.splice(currentLevel)
         setSolution(temp);
         setGameState(false);
@@ -70,7 +70,7 @@ export default function SequenceMain(props){
 
     function flicker() {
         for (let i = 0; i < currentLevel; i++) {
-          let boxId = randomNumbers[i];
+          let boxId = props.arraySequence[i];
           setTimeout(() => {
             const boxElement = document.getElementById(`box${boxId}`);
             boxElement.classList.add('main-grid-box-selected');

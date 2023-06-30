@@ -45,6 +45,18 @@ export default function Sequence(){
     //         console.error('Error fetching data:', error);
     //     });
     // }, []);
+    function newSet(){
+        let arraySequence = [];
+        for(let i = 0; i <30; i++){
+            arraySequence.push(Math.floor(Math.random()*9)+1);
+        }
+        return arraySequence
+    }
+
+    const [arraySequence, setArraySequence] = useState(() => {
+        return newSet()
+        }
+    )
         
     const [loginPopup, setLoginPopup] = useState(false)
     const [signupPopup, setSignupPopUp] = useState(false);
@@ -75,6 +87,9 @@ export default function Sequence(){
     function toggle(){
         const audio = new Audio(audioStart);
         audio.play();
+        setArraySequence(() => {
+            return newSet();
+        })
         setTimeout(()=>{
             setGameStarted((prevState) => !prevState);
         }, 500)
@@ -112,6 +127,7 @@ export default function Sequence(){
                 <SequenceMain
                     toggle={toggle}
                     playerName={playerName}
+                    arraySequence={arraySequence}
                     // addItem={addItem}
                 />
             )}

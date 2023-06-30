@@ -1,11 +1,11 @@
 import {useEffect, useState, useRef} from "react"
 import heart from '../../assets/heart.png';
-import {arrayNumber} from './NumberHero'
+// import {arrayNumber} from './NumberHero'
 import audio3 from '../../assets/sound3.mp3';
 import {images} from '../Main/Hero'
 
 export default function NumberMain(props){
-    const [numberDisplay, setNumberDisplay] = useState(arrayNumber[0]);
+    const [numberDisplay, setNumberDisplay] = useState(props.arrayNumber[0]);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [lives, setLives] = useState(3);
     const [answerMode, setAnswerMode] = useState(true);
@@ -57,7 +57,6 @@ export default function NumberMain(props){
 
     useEffect(() => {
         document.addEventListener('keydown', handleKeyPress);
-    
         // Cleanup the event listener on component unmount
         return () => {
           document.removeEventListener('keydown', handleKeyPress);
@@ -73,7 +72,7 @@ export default function NumberMain(props){
 
     useEffect(()=>{
         setFlickerState(true);
-        setNumberDisplay(arrayNumber[currentLevel - 1])
+        setNumberDisplay(props.arrayNumber[currentLevel - 1])
         console.log("Current Level is " + currentLevel)
         setTimeout(() =>{
             setNumberDisplay("●".repeat(currentLevel))
@@ -85,7 +84,7 @@ export default function NumberMain(props){
 
     function flicker(){
         setFlickerState(true);
-        setNumberDisplay(arrayNumber[currentLevel - 1]);
+        setNumberDisplay(props.arrayNumber[currentLevel - 1]);
         setTimeout(() =>{
             setNumberDisplay("●".repeat(currentLevel))
             setAnswerMode(true);
@@ -104,8 +103,8 @@ export default function NumberMain(props){
         const submitAudio = new Audio(audio3);
         submitAudio.play();
         console.log(inputValue);
-        console.log(arrayNumber[currentLevel-1]);
-        if(inputValue == arrayNumber[currentLevel-1]){
+        console.log(props.arrayNumber[currentLevel-1]);
+        if(inputValue == props.arrayNumber[currentLevel-1]){
             setCorrectAns(true);
         } else{
             setCorrectAns(false);

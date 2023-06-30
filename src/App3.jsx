@@ -46,6 +46,18 @@ export default function Number(){
     //         console.error('Error fetching data:', error);
     //     });
     // }, []);
+    function newSet(){
+        let arrayNumber = [];
+        for (let i = 0; i < 20; i++){
+            arrayNumber.push(Math.floor(Math.random()*9*10**i) + 1*10**i);
+        }
+        return arrayNumber
+    }
+
+    const [arrayNumber, setArrayNumber] = useState(() => {
+        return newSet()
+        }
+    )
 
     const [loginPopup, setLoginPopup] = useState(false)
     const [signupPopup, setSignupPopUp] = useState(false);
@@ -76,6 +88,9 @@ export default function Number(){
     function toggle(){
         const audio = new Audio(audioStart);
         audio.play();
+        setArrayNumber(() => {
+            return newSet();
+        })
         setTimeout(()=>{
             setGameStarted((prevState) => !prevState);
         }, 500)
@@ -113,6 +128,7 @@ export default function Number(){
                     <NumberMain
                         toggle={toggle}
                         playerName={playerName}
+                        arrayNumber={arrayNumber}
                         // addItem={addItem}
                     />
                 )}

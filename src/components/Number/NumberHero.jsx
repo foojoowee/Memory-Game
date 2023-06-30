@@ -1,8 +1,4 @@
 import {useEffect, useState} from "react"
-const arrayNumber = [];
-for (let i = 0; i < 21; i++){
-    arrayNumber.push(Math.floor(Math.random()*9*10**i) + 1*10**i);
-}
 
 export default function NumberHero(props){
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +18,7 @@ export default function NumberHero(props){
             setCurrentIndex((prevIndex) => (prevIndex + 1) % display.length)
         }, 1000);
         //Cleaning up
-        return () => clearInterval(interval)
+        return () => clearInterval(interval) 
     }, [])
 
     const currentDisplay = display[currentIndex]
@@ -43,5 +39,3 @@ export default function NumberHero(props){
         </div>
     )
 }
-
-export { arrayNumber };
