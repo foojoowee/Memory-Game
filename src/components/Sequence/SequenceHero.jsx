@@ -29,6 +29,10 @@ export default function SequenceHero(props){
                 Click the boxes in order.
             </div>
             <div className="sequence-hero-text">Good Luck!</div>
+            <div className="name-input">
+                <input onChange={(e) => props.setPlayerName(e.target.value)} className="name-input-input" type="text" placeholder="Enter your Name" value={props.playerName === "Guest" ? "": props.playerName}/>
+                <p>(Name for High Scores)</p>
+            </div>
             <button className="sequence-hero-button" onClick={props.toggle}>START</button>
         </div>
     )

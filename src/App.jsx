@@ -8,21 +8,34 @@ import './index.css'
 import {useEffect, useState} from 'react'
 
 export default function App() {
+
+//   const [numberData, setNumberData] = useState([])
+//   const [sequenceData, setSequenceData] = useState([])
+
+//   useEffect(() => {
+//     fetch('http://localhost:3000/api/connect')
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Received data:', data);
+//         setNumberData((data[0]));
+//         setSequenceData((data[1]));
+//         // Process the received data here
+//     })
+//     .catch(error => {
+//         console.error('Error fetching data:', error);
+//     });
+// }, []);
+
+
+//   useEffect(() =>{
+//     console.log("Database has changed")
+//   }, [numberData])
+
   const [loginPopup, setLoginPopup] = useState(false)
   const [signupPopup, setSignupPopUp] = useState(false);
   const [scorePopup, setScorePopup] = useState(false);
 
-  // useEffect(()=> {
-  //   function start(){
-  //     gapi.client.init({
-  //       clientId: clientId,
-  //       scope: ""
-  //     })
-  //   }
-
-  //   gapi.load('client:auth2',start);
-  // })
-
+  //Below is the code to store in local/session storage
   function initializeScore(){
     const defaultSequenceScores = [
         {playerName: "SKT T1 Faker", level: 15, date: "27/06/2023"},
@@ -34,7 +47,7 @@ export default function App() {
 
     const stringDefaultSequenceScores = JSON.stringify(defaultSequenceScores)
 
-    sessionStorage.setItem('sequenceScores', stringDefaultSequenceScores )
+    localStorage.setItem('sequenceScores', stringDefaultSequenceScores )
 
     const defaultNumberScores = [
         {playerName: "Hikaru Nakamura", level: 16, date: "27/06/2023"},
@@ -46,7 +59,7 @@ export default function App() {
     
     const stringDefaultNumberScores = JSON.stringify(defaultNumberScores)
     
-    sessionStorage.setItem('numberScores', stringDefaultNumberScores )
+    localStorage.setItem('numberScores', stringDefaultNumberScores )
     console.log("Store initialized")
   }
 
@@ -75,8 +88,6 @@ export default function App() {
 
   return (
     <div>
-      {/* <GoogleLoginComp/>
-      <GoogleLogoutComp/> */}
       <Header
         toggleLogin={toggleLogin}
         toggleSignup={toggleSignup}
@@ -93,6 +104,8 @@ export default function App() {
       <HighScore
         toggleHighScore={toggleHighScore}
         initializeScore = {initializeScore}
+        // numberData={numberData}
+        // sequenceData={sequenceData}
       />}
       <div className="main-container">
         <Hero/>

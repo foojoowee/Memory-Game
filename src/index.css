@@ -506,3 +506,19 @@ body{
   height: 20px;
   margin-right: 3px;
 }
+
+.name-input{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.name-input p{
+  margin-top: 10px
+}
+
+.name-input-input{
+  margin-top: 20px;
+  padding: 5px 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}

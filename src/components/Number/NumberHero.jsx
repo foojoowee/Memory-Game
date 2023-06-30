@@ -35,6 +35,10 @@ export default function NumberHero(props){
                 Type the number you saw.
             </div>
             <div className="number-hero-text">Good Luck!</div>
+            <div className="name-input">
+                <input onChange={(e) => props.setPlayerName(e.target.value)} className="name-input-input" type="text" placeholder="Enter your Name" value={props.playerName === "Guest" ? "": props.playerName}/>
+                <p>(Name for High Scores)</p>
+            </div>
             <button className="number-hero-button" onClick={props.toggle}>START</button>
         </div>
     )

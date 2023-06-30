@@ -190,14 +190,21 @@ export default function SequenceMain(props){
             const formattedMonth = String(month).padStart(2, "0");
             const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
     
-            const newSequenceScore = {playerName: props.playerName, level: currentLevel, date: formattedDate}
+            const newSequenceScore = {
+                playerName: props.playerName, 
+                level: currentLevel, 
+                date: formattedDate
+            }
 
-            const existingSequenceScores = sessionStorage.getItem('sequenceScores');
+            // props.addItem(newSequenceScore)
+
+            //This is for local/session storage code
+            const existingSequenceScores = localStorage.getItem('sequenceScores');
             const sequenceScores = existingSequenceScores ? JSON.parse(existingSequenceScores) : [];
             console.log(sequenceScores)
             sequenceScores.push(newSequenceScore);
             sequenceScores.sort((a,b) => b.level - a.level)
-            sessionStorage.setItem('sequenceScores', JSON.stringify(sequenceScores));
+            localStorage.setItem('sequenceScores', JSON.stringify(sequenceScores));
             console.log("It worked")
         }
     }, [lives])

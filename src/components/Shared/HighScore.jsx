@@ -5,7 +5,7 @@ import bronzeTrophy from '../../assets/bronze-icon.svg'
 import {useState} from 'react'
 
 export default function HighScore({toggleHighScore, initializeScore}){
-    
+    //numberData, sequenceData
     const [selectedTab, setSelectedTab] = useState(true)
 
     function toggle(input){
@@ -15,21 +15,21 @@ export default function HighScore({toggleHighScore, initializeScore}){
     }
 
     function clearStorage(){
-        sessionStorage.clear();
+        localStorage.clear();
         initializeScore();
     }
     
     function printStorage(){
-        const sequenceScores = JSON.parse(sessionStorage.getItem('sequenceScores'))
-        const numberScores = JSON.parse(sessionStorage.getItem('numberScores'))
+        const sequenceScores = JSON.parse(localStorage.getItem('sequenceScores'))
+        const numberScores = JSON.parse(localStorage.getItem('numberScores'))
         console.log(sequenceScores)
         console.log(sequenceScores[0].playerName)
         console.log(numberScores)
         console.log("Storage Printed")
     }
 
-    const sequenceScores = JSON.parse(sessionStorage.getItem('sequenceScores'))
-    const numberScores = JSON.parse(sessionStorage.getItem('numberScores'))
+    const sequenceScores = JSON.parse(localStorage.getItem('sequenceScores'))
+    const numberScores = JSON.parse(localStorage.getItem('numberScores'))
 
     return(
         <div className="highscore-main">
@@ -56,6 +56,9 @@ export default function HighScore({toggleHighScore, initializeScore}){
                                     1
                                     <img src={goldTrophy} alt="" />
                                 </td>
+                                {/* <td>{sequenceData[0].playerName}</td>
+                                <td>{sequenceData[0].level}</td>
+                                <td>{sequenceData[0].date}</td> */}
                                 <td>{sequenceScores[0].playerName}</td>
                                 <td>{sequenceScores[0].level}</td>
                                 <td>{sequenceScores[0].date}</td>
@@ -65,6 +68,9 @@ export default function HighScore({toggleHighScore, initializeScore}){
                                     2
                                     <img src={silverTrophy} alt="" />
                                 </td>
+                                {/* <td>{sequenceData[1].playerName}</td>
+                                <td>{sequenceData[1].level}</td>
+                                <td>{sequenceData[1].date}</td> */}
                                 <td>{sequenceScores[1].playerName}</td>
                                 <td>{sequenceScores[1].level}</td>
                                 <td>{sequenceScores[1].date}</td>
@@ -74,18 +80,27 @@ export default function HighScore({toggleHighScore, initializeScore}){
                                     3
                                     <img src={bronzeTrophy} alt="" />
                                 </td>
+                                {/* <td>{sequenceData[2].playerName}</td>
+                                <td>{sequenceData[2].level}</td>
+                                <td>{sequenceData[2].date}</td> */}
                                 <td>{sequenceScores[2].playerName}</td>
                                 <td>{sequenceScores[2].level}</td>
                                 <td>{sequenceScores[2].date}</td>
                             </tr>
                             <tr>
                                 <td>4</td>
+                                {/* <td>{sequenceData[3].playerName}</td>
+                                <td>{sequenceData[3].level}</td>
+                                <td>{sequenceData[3].date}</td> */}
                                 <td>{sequenceScores[3].playerName}</td>
                                 <td>{sequenceScores[3].level}</td>
                                 <td>{sequenceScores[3].date}</td>
                             </tr>
                             <tr>
                                 <td>5</td>
+                                {/* <td>{sequenceData[4].playerName}</td>
+                                <td>{sequenceData[4].level}</td>
+                                <td>{sequenceData[4].date}</td> */}
                                 <td>{sequenceScores[4].playerName}</td>
                                 <td>{sequenceScores[4].level}</td>
                                 <td>{sequenceScores[4].date}</td>
@@ -107,6 +122,9 @@ export default function HighScore({toggleHighScore, initializeScore}){
                                     1
                                     <img src={goldTrophy} alt="" />
                                 </td>
+                                {/* <td>{numberData[0].playerName}</td>
+                                <td>{numberData[0].level}</td>
+                                <td>{numberData[0].date}</td> */}
                                 <td>{numberScores[0].playerName}</td>
                                 <td>{numberScores[0].level}</td>
                                 <td>{numberScores[0].date}</td>
@@ -116,6 +134,9 @@ export default function HighScore({toggleHighScore, initializeScore}){
                                     2
                                     <img src={silverTrophy} alt="" />
                                 </td>
+                                {/* <td>{numberData[1].playerName}</td>
+                                <td>{numberData[1].level}</td>
+                                <td>{numberData[1].date}</td> */}
                                 <td>{numberScores[1].playerName}</td>
                                 <td>{numberScores[1].level}</td>
                                 <td>{numberScores[1].date}</td>
@@ -125,18 +146,27 @@ export default function HighScore({toggleHighScore, initializeScore}){
                                     3
                                     <img src={bronzeTrophy} alt="" />
                                 </td>
+                                {/* <td>{numberData[2].playerName}</td>
+                                <td>{numberData[2].level}</td>
+                                <td>{numberData[2].date}</td> */}
                                 <td>{numberScores[2].playerName}</td>
                                 <td>{numberScores[2].level}</td>
                                 <td>{numberScores[2].date}</td>
                             </tr>
                             <tr>
                                 <td>4</td>
+                                {/* <td>{numberData[3].playerName}</td>
+                                <td>{numberData[3].level}</td>
+                                <td>{numberData[3].date}</td> */}
                                 <td>{numberScores[3].playerName}</td>
                                 <td>{numberScores[3].level}</td>
                                 <td>{numberScores[3].date}</td>
                             </tr>
                             <tr>
                                 <td>5</td>
+                                {/* <td>{numberData[4].playerName}</td>
+                                <td>{numberData[4].level}</td>
+                                <td>{numberData[4].date}</td> */}
                                 <td>{numberScores[4].playerName}</td>
                                 <td>{numberScores[4].level}</td>
                                 <td>{numberScores[4].date}</td>
@@ -145,10 +175,10 @@ export default function HighScore({toggleHighScore, initializeScore}){
                     </table>
                 }
             </div>
-            <div className="highscore-buttons">
+            {/* <div className="highscore-buttons">
                 <button onClick={clearStorage}>Clear Storage</button>
                 <button onClick={printStorage}>Print Storage</button>
-            </div>
+            </div> */}
         </div>
     )
 }

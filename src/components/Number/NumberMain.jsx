@@ -39,13 +39,19 @@ export default function NumberMain(props){
             const formattedMonth = String(month).padStart(2, "0");
             const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
     
-            const newNumberScore = {playerName: props.playerName, level: currentLevel, date: formattedDate}
+            const newNumberScore = {
+                playerName: props.playerName, 
+                level: currentLevel, 
+                date: formattedDate
+            }
 
-            const existingNumberScores = sessionStorage.getItem('numberScores');
+            // props.addItem(newNumberScore)
+
+            const existingNumberScores = localStorage.getItem('numberScores');
             const numberScores = existingNumberScores ? JSON.parse(existingNumberScores) : [];
             numberScores.push(newNumberScore);
             numberScores.sort((a,b) => b.level - a.level)
-            sessionStorage.setItem('numberScores', JSON.stringify(numberScores));
+            localStorage.setItem('numberScores', JSON.stringify(numberScores));
         }
     }, [lives])
 
