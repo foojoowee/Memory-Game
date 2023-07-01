@@ -6,6 +6,7 @@ import SequenceMain from "./components/Sequence/SequenceMain"
 import SequenceHero from "./components/Sequence/SequenceHero"
 import { useState, useEffect } from "react"
 import audioStart from './assets/sound2.mp3';
+import './index.css'
 
 export default function Sequence(){
 

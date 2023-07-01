@@ -6,6 +6,7 @@ import NumberMain from "./components/Number/NumberMain"
 import NumberHero from "./components/Number/NumberHero"
 import { useState, useEffect } from "react"
 import audioStart from './assets/sound2.mp3';
+import './index.css'
 
 export default function Number(){
 
