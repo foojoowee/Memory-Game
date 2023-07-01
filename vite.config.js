@@ -7,7 +7,7 @@ const outDir = resolve(__dirname, 'dist')
 // https://vitejs.dev/config/
 export default defineConfig({
   root,
-  base: "/vite-deploy/",
+  base: "/Memory-Game/",
   plugins: [react()],
   build: {
     outDir,
