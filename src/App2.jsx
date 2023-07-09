@@ -97,12 +97,13 @@ export default function Sequence(){
     }
     
     return (
-        <div>
+        <div className="home-main-container">
             <Header
                 toggleLogin={toggleLogin}
                 toggleSignup={toggleSignup}
                 toggleHighScore={toggleHighScore}
             />
+            <div className="home-main-container-content">
             <Login
                 closeToggle={closeToggle}
                 loginPopup = {loginPopup}
@@ -132,6 +133,9 @@ export default function Sequence(){
                     // addItem={addItem}
                 />
             )}
+                
+            </div>
+
             </div>
             {/* <button onClick={() => addItem(newNumberScore)}>
                 Add Item

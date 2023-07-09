@@ -87,29 +87,31 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="home-main-container">
       <Header
         toggleLogin={toggleLogin}
         toggleSignup={toggleSignup}
         toggleHighScore={toggleHighScore}
       />
-      <Login
-          closeToggle={closeToggle}
-          loginPopup = {loginPopup}
-          signupPopup = {signupPopup}
-          toggleLogin = {toggleLogin}
-          toggleSignup = {toggleSignup}
-      />
-      {scorePopup && 
-      <HighScore
-        toggleHighScore={toggleHighScore}
-        initializeScore = {initializeScore}
-        // numberData={numberData}
-        // sequenceData={sequenceData}
-      />}
-      <div className="main-container">
-        <Hero/>
-        <Games/>
+      <div className="home-main-container-content">
+        <Login
+            closeToggle={closeToggle}
+            loginPopup = {loginPopup}
+            signupPopup = {signupPopup}
+            toggleLogin = {toggleLogin}
+            toggleSignup = {toggleSignup}
+        />
+        {scorePopup && 
+        <HighScore
+          toggleHighScore={toggleHighScore}
+          initializeScore = {initializeScore}
+          // numberData={numberData}
+          // sequenceData={sequenceData}
+        />}
+        <div className="main-container">
+          <Hero/>
+          <Games/>
+        </div>
       </div>
       <Footer/>
     </div>

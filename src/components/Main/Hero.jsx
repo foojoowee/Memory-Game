@@ -1,4 +1,4 @@
-import brainPicture from '../../assets/brain.jpg'
+import brainPicture from '../../assets/brain.png'
 import brainPicture2 from '../../assets/brain-1.png'
 import brainPicture3 from '../../assets/brain-2.png'
 import brainPicture4 from '../../assets/brain-3.png'

@@ -10,11 +10,21 @@ body{
   line-height: 1.2;
 }
 
+.home-main-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home-main-container-content{
+  height: 100%;
+}
+
 .header-main{
   display: flex;
   justify-content: space-evenly;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .header-scores{
@@ -24,7 +34,6 @@ body{
 
 .header-login{
   display: flex;
-  
 }
 
 .header-login p{
@@ -41,7 +50,7 @@ body{
 .header-login img{
   height: 30px;
   margin-left: 20px;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .header-login img:hover{
@@ -49,15 +58,43 @@ body{
 }
 
 .footer-main{
-  background:	#1D1E25;
-  color: white;
+  font-size: 1.4rem;
+  height: 75px;
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  padding: 20px 0px;
-  position: absolute;
-  left:0;
-  bottom:0;
-  right:0;
+  position: relative;
+  padding: 20px 10px;
+  margin-top: auto;
+  background: #20203b;
+  color:white;
+  width: 100%;
+}
+
+.footer-main a{
+  color: white;
+  text-decoration: none;
+}
+
+.footer-main a:hover{
+  text-decoration: underline;
+  color:aquamarine
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hero-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50;
+  flex-direction: column;
+  background-color: #f18100;
+  color: white;
 }
 
 .hero-content img{
@@ -66,17 +103,6 @@ body{
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
   margin: 30px 20px;
   height: 250px;
-}
-
-.hero-content{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  flex-direction: column;
-  background-color: #f18100;
-  font-weight: 600px;
-  color: white;
 }
 
 .hero-text p:nth-child(1){
@@ -99,7 +125,7 @@ body{
 }
 
 .games-container img{
-  height: 150px;
+  height: 70%;
 }
 
 .games-container a{
@@ -117,6 +143,8 @@ body{
 
 .games-box{
   height: 250px;
+  max-width: 25vw;
+  min-width: 200px;
   width: 350px;
   display: flex;
   flex-direction: column;
@@ -131,13 +159,13 @@ body{
 }
 
 .games-box .telephone-icon{
-  height: 80px;
+  height: 35%;
   margin-bottom: 30px;
   margin-top: 35px;
 }
 
 .games-box .pair-icon{
-  height: 80px;
+  height: 40%;
   margin-bottom: 30px;
   margin-top: 35px;
 }
@@ -521,4 +549,90 @@ body{
   padding: 5px 20px;
   font-size: 1.5rem;
   text-align: center;
+}
+
+
+@media (max-width: 1200px){
+  .header-main{
+    font-size: 1.5rem;
+  }
+  .header-login img{
+    height: 25px;
+    margin-left: 20px;
+    margin-top: 8px;
+  }
+  .hero-content img{
+    height: 200px;
+  }
+  .hero-text p:nth-child(1){
+    font-size: 2.5rem;
+  }
+  .hero-text p:nth-child(2){
+    font-size: 1.7rem;
+  }
+  .games-main{
+    column-gap: 40px;
+  }
+  .footer-main{
+    font-size: 1.2rem;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px){
+  .header-main{
+    font-size: 1.0rem;
+  }
+  .header-login img{
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .hero-content img{
+    height: 150px;
+  }
+  .hero-text p:nth-child(1){
+    font-size: 2.0rem;
+  }
+  .hero-text p:nth-child(2){
+    font-size: 1.4rem;
+  }
+  .games-main{
+    grid-template-columns: 1fr;
+    margin: 50px auto;
+    row-gap: 30px;
+    text-decoration: none;
+  }
+  .footer-main{
+    font-size: 1.0rem;
+  }
+  .header-scores{
+    padding: 10px 0px;
+  }
+  .header-login p{
+    padding: 10px 0px;
+    margin: 0px 10px;
+  }
+  .header-login img{
+    margin-left: 0px;
+  }
+  .games-box{
+    height: 175px;
+    width: 250px;
+    font-size: 1.0rem;
+    padding-bottom: 20px;
+  }
+  .games-container img{
+    height: 50%;
+  }
+  .games-box .telephone-icon{
+    height: 25%;
+    margin-bottom: 30px;
+    margin-top: 35px;
+  }
+  .games-box .pair-icon{
+    height: 30%;
+    margin-bottom: 30px;
+    margin-top: 35px;
+  }
 }
