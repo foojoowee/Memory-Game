@@ -69,16 +69,20 @@ export default function App() {
 
   function toggleHighScore(){
     setScorePopup((prevState) => !prevState)
+    setSignupPopUp(false)
+    setLoginPopup(false)
   }
 
   function toggleLogin(){
-    setLoginPopup(true)
+    setLoginPopup((prevState) => !prevState)
     setSignupPopUp(false)
+    setScorePopup(false)
   }
 
   function toggleSignup(){
-    setSignupPopUp(true)
+    setSignupPopUp((prevState) => !prevState)
     setLoginPopup(false)
+    setScorePopup(false)
   }
 
   function closeToggle(){

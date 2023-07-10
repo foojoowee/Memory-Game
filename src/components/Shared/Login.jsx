@@ -4,7 +4,7 @@ import googleIcon from '../../assets/google-icon.svg'
 export default function Login({closeToggle, loginPopup, signupPopup, toggleSignup, toggleLogin}){
     
     return(
-        <div className={`login-wrapper ${loginPopup || signupPopup ? 'appear': ''}`}>
+        <div className={`login-wrapper ${loginPopup || signupPopup ? 'appear': ''}` }>
             <img onClick={closeToggle} className="login-close-icon" src={closeIcon} alt="" />
             <div className={`login-main ${signupPopup ? 'login-signup-active': ''}`}>
                 <div className="login-header">
@@ -40,8 +40,8 @@ export default function Login({closeToggle, loginPopup, signupPopup, toggleSignu
                 </div>
                 <form action="#">
                     <div className="input-box">
-                            <input type="email" placeholder=" " required/>
-                            <label> Username : </label>
+                        <input type="email" placeholder=" " required/>
+                        <label> Username : </label>
                     </div>
                     <div className="input-box">
                         <input type="email" placeholder=" " required/>
@@ -51,10 +51,7 @@ export default function Login({closeToggle, loginPopup, signupPopup, toggleSignu
                         <input type="password" placeholder=" " required/>
                         <label> Password : </label>
                     </div>
-                    <div className="remember-me">
-                        <input type="checkbox"/>
-                        <label>I agree to the T&C</label>
-                    </div>
+
                     <div className="signup-buttons">
                         <button type="submit" className="btn-submit">
                             Sign Up

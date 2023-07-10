@@ -23,10 +23,12 @@ export default function Hero(){
 
     return(
     <div className="hero-content">
-        <img 
-            src={currentImage} 
-            alt=""
-        />
+        <div>
+            <img 
+                src={currentImage} 
+                alt=""
+            />
+        </div>
         <div className="hero-text">
             <p>MEMORY TEST</p>
             <p>Take the test and challenge your cognitive abilities!</p>
