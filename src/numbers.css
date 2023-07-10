@@ -18,6 +18,7 @@
     margin: 40px auto;
     padding: 20px;
     font-size: 3rem;
+    text-align: center;
 }
 
 .number-hero-text{
@@ -168,7 +169,7 @@
 
 .game-over-title{
     margin-top: 20px;
-    font-size: 2rem
+    font-size: 2rem;
 }
 
 .game-over-image{
