@@ -11,20 +11,14 @@ body{
 }
 
 .home-main-container{
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
-
-.home-main-container-content{
-  height: 100%;
-}
-
 .header-main{
   display: flex;
   justify-content: space-evenly;
   text-transform: uppercase;
   font-size: 1.8rem;
+  background-color: rgb(203, 203, 219);
 }
 
 .header-scores{
@@ -59,14 +53,14 @@ body{
 
 .footer-main{
   font-size: 1.4rem;
-  height: 75px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   position: relative;
-  padding: 20px 10px;
+  padding: 10px 10px;
   margin-top: auto;
-  background: #20203b;
+  background: #2d2d33;
   color:white;
   width: 100%;
 }
@@ -135,7 +129,7 @@ body{
 
 .games-main{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 50px auto;
   column-gap: 100px;
   text-decoration: none;
@@ -156,6 +150,25 @@ body{
   padding-bottom: 40px;
   font-size: 1.4rem;
   transition: scale 0.4s;
+  background-color: aliceblue;
+}
+
+.games-box-coming{
+  height: 250px;
+  max-width: 25vw;
+  min-width: 200px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: 1px solid black;
+  padding-bottom: 40px;
+  font-size: 1.4rem;
+  transition: scale 0.4s;
+  background-color: rgb(203, 208, 212);
 }
 
 .games-box .telephone-icon{
@@ -164,7 +177,7 @@ body{
   margin-top: 35px;
 }
 
-.games-box .pair-icon{
+.games-box-coming .pair-icon{
   height: 40%;
   margin-bottom: 30px;
   margin-top: 35px;
@@ -267,11 +280,14 @@ body{
       scale: 0;
   }
 }
+.login-fixed{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
 
 .login-wrapper{
     position: absolute;
-    top: 50%;
-    left: 50%;
     transform: scale(0);
     width: 350px;
     height: 400px;
@@ -294,11 +310,14 @@ body{
 .appear{
   transform: scale(1) translate(-50%, -50%);
 }
+.highscore-fixed{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
 
 .highscore-main{
   position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
   height: 500px;
@@ -539,22 +558,6 @@ body{
   margin-right: 3px;
 }
 
-.name-input{
-  margin-top: 40px;
-  text-align: center;
-}
-
-.name-input p{
-  margin-top: 10px
-}
-
-.name-input-input{
-  margin-top: 20px;
-  padding: 5px 20px;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
 
 @media (max-width: 1200px){
   .header-main{
@@ -628,7 +631,7 @@ body{
     padding: 10px 0px;
   }
   .header-login p{
-    padding: 10px 0px;
+    padding: 10px 10px;
     margin: 0px 10px;
   }
   .header-login img{

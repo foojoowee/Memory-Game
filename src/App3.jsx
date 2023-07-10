@@ -98,7 +98,7 @@ export default function Number(){
     }
 
     return (
-        <div>
+        <div className="number-main-container">
             <Header
                 toggleLogin={toggleLogin}
                 toggleSignup={toggleSignup}
@@ -117,7 +117,7 @@ export default function Number(){
                 // numberData={numberData}
                 // sequenceData={sequenceData}
             />}
-                <div className="number-main-container">
+
                 {!gameStarted && (
                     <NumberHero
                         toggle={toggle}
@@ -133,7 +133,7 @@ export default function Number(){
                         // addItem={addItem}
                     />
                 )}
-                </div>
+
             <Footer/>
         </div>
     )

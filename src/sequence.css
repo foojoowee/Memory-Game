@@ -1,7 +1,9 @@
+
 .sequence-main-container{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh;
+    background-color: #216bb4;
 }
 
 .sequence-hero, .sequence-main{
@@ -11,12 +13,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .sequence-hero-title{
     margin: 40px auto;
     padding: 20px;
     font-size: 3rem;
+    text-align: center;
 }
 
 .sequence-lives{
@@ -65,11 +69,27 @@
     margin: 10px 0px;
 }
 
+.name-input{
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+.name-input p{
+    margin-top: 10px
+}
+
+.name-input-input{
+    margin-top: 20px;
+    padding: 5px 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
 .sequence-hero-button{
     color: rgb(17, 3, 3);
     background-color: #4ad327;
     padding: 10px 20px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     margin-top: 40px;
     font-size: 1.5rem;
     font-weight: 600;
@@ -94,7 +114,7 @@
 .sequence-main-text, .sequence-main-display-text{
     font-size: 1.7rem;
     margin: 10px 0px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 .sequence-main-display-text{
@@ -155,8 +175,9 @@
 
 .game-over{
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -206,5 +227,113 @@
     }
     to{
         opacity: 1.0;
+    }
+}
+
+@media (max-width: 1200px){
+    .sequence-hero-title{
+        font-size: 2.5rem;
+    }
+    .sequence-hero-text{
+        font-size: 1.5rem;
+    }
+    .game-over{
+        height: 400px;
+        width: 350px;
+    }
+    .game-over-image{
+        height: 175px
+    }
+    .game-over-title{
+        font-size: 1.6rem
+    }
+    .game-over-text{
+        font-size: 1.4rem;
+    }
+    .game-over-flavour-text{
+        font-size: 1.2rem;
+        padding: 0px 20px;
+    }
+    .game-over button{
+        position: relative;
+        top: -80%;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 768px){
+    .sequence-hero-title{
+        font-size: 2.0rem;
+    }
+    .grid-box{
+        height: 40px;
+        width: 40px;
+    }
+    .hero-grid{
+        display: grid;
+        column-gap: 7px;
+        row-gap: 7px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-bottom: 30px;
+    }
+    .sequence-hero-text{
+        font-size: 1.3rem;
+    }
+    .name-input{
+        margin-top: 20px;
+        font-size: 1rem
+    }
+    .name-input-input{
+        font-size: 1.3rem;
+    }
+    .sequence-hero-button{
+
+        padding: 5px 10px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        font-size: 1.2rem;
+    }
+    .main-grid-box{
+        height: 60px;
+        width: 60px;
+    }
+    .sequence-main-text{
+        font-size: 1.4rem;
+    }
+    .sequence-main-display-text{
+        font-size: 1.2rem;
+    }
+    .sequence-level{
+        font-size: 1.4rem;
+    }
+    .sequence-lives{
+        font-size: 1.2rem;
+    }
+    .sequence-lives img{
+        height: 35px;
+    }
+    .game-over{
+        height: 300px;
+        width: 300px;
+    }
+    .game-over-image{
+        height: 125px
+    }
+    .game-over-title{
+        margin-top: 20px;
+        font-size: 1.4rem
+    }
+    .game-over-text{
+        font-size: 1.2rem;
+    }
+    .game-over-flavour-text{
+        font-size: 1.0rem;
+        padding: 0px 20px;
+    }
+    .game-over button{
+        position: relative;
+        top: -88%;
+        font-size: 0.7rem;
     }
 }

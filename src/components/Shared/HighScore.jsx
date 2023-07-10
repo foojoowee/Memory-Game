@@ -32,6 +32,7 @@ export default function HighScore({toggleHighScore, initializeScore}){
     const numberScores = JSON.parse(localStorage.getItem('numberScores'))
 
     return(
+        <div className="highscore-fixed">   
         <div className="highscore-main">
             <div className="highscore-title">
                 <p>LEADERBOARD</p>
@@ -179,6 +180,7 @@ export default function HighScore({toggleHighScore, initializeScore}){
                 <button onClick={clearStorage}>Clear Storage</button>
                 <button onClick={printStorage}>Print Storage</button>
             </div> */}
+        </div>
         </div>
     )
 }

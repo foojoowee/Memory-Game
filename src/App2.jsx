@@ -97,13 +97,12 @@ export default function Sequence(){
     }
     
     return (
-        <div className="home-main-container">
+        <div className="sequence-main-container">
             <Header
                 toggleLogin={toggleLogin}
                 toggleSignup={toggleSignup}
                 toggleHighScore={toggleHighScore}
             />
-            <div className="home-main-container-content">
             <Login
                 closeToggle={closeToggle}
                 loginPopup = {loginPopup}
@@ -117,7 +116,7 @@ export default function Sequence(){
                 // numberData={numberData}
                 // sequenceData={sequenceData}
             />}
-            <div className="sequence-main-container">
+            <div className="sequence-content-container">
             {!gameStarted && (
                 <SequenceHero
                     toggle={toggle}
@@ -133,9 +132,6 @@ export default function Sequence(){
                     // addItem={addItem}
                 />
             )}
-                
-            </div>
-
             </div>
             {/* <button onClick={() => addItem(newNumberScore)}>
                 Add Item

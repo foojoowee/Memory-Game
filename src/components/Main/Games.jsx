@@ -26,12 +26,12 @@ export default function Games(){
                         <p>Numbers</p>
                     </div>
                 </a>
-                <div href="" onClick={togglePopup}>
-                    <div className="games-box">
+                {/* <div href="" onClick={togglePopup}>
+                    <div className="games-box-coming">
                         <img src={icon3} alt="" className="pair-icon" />
                         <p>Card Pairs</p>
                     </div>
-                </div>
+                </div> */}
                 {popup &&
                     <div className="coming-soon">
                         <div className="coming-soon-title">Sorry this game is still in development</div>

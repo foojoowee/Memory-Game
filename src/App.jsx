@@ -89,15 +89,14 @@ export default function App() {
     setLoginPopup(false)
     setSignupPopUp(false)
   }
-
+  
   return (
-    <div className="home-main-container">
+    <div>
       <Header
         toggleLogin={toggleLogin}
         toggleSignup={toggleSignup}
         toggleHighScore={toggleHighScore}
       />
-      <div className="home-main-container-content">
         <Login
             closeToggle={closeToggle}
             loginPopup = {loginPopup}
@@ -116,7 +115,6 @@ export default function App() {
           <Hero/>
           <Games/>
         </div>
-      </div>
       <Footer/>
     </div>
   )

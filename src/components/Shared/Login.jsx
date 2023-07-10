@@ -4,6 +4,7 @@ import googleIcon from '../../assets/google-icon.svg'
 export default function Login({closeToggle, loginPopup, signupPopup, toggleSignup, toggleLogin}){
     
     return(
+        <div className="login-fixed">
         <div className={`login-wrapper ${loginPopup || signupPopup ? 'appear': ''}` }>
             <img onClick={closeToggle} className="login-close-icon" src={closeIcon} alt="" />
             <div className={`login-main ${signupPopup ? 'login-signup-active': ''}`}>
@@ -68,6 +69,7 @@ export default function Login({closeToggle, loginPopup, signupPopup, toggleSignu
                     </div>
                 </form>
             </div>
+        </div>
         </div>
     )
 }
